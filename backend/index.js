@@ -16,7 +16,10 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: 'https://mememate.onrender.com', // Allow requests from your frontend URL
+  // Optional: Only if using cookies or other credentials
+}));
 app.use(express.json());
 
 // Routes
